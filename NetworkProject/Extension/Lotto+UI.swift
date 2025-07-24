@@ -36,17 +36,20 @@ extension LottoViewController {
             make.size.equalTo(CGSize(width: 40, height: 40))
         }
         stackView.addArrangedSubview(bonusLabel)
+        
     }
-    func setupBallColor(for number: Int) -> UIColor {
+    
+    func getBallColor(for number: Int) -> UIColor {
         switch number {
         case 1...10: return .systemYellow
-        case 11...20: return .cyan
+        case 11...20: return .systemMint
         case 21...30: return .systemPink
         case 31...40: return .systemGray2
         case 41...45: return .systemGreen
         default: return .systemGray2
         }
     }
+    
     func configureUI() {
         view.addSubview(tf)
         view.addSubview(infoLabel)

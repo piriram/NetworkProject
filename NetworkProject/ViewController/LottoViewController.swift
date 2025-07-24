@@ -104,6 +104,8 @@ class LottoViewController: UIViewController {
         tf.inputView = pv
         pv.delegate = self
         pv.dataSource = self
+        pv.selectRow(rounds.count-1, inComponent: 0, animated: true)
+        pickerView(pv, didSelectRow: rounds.count-1, inComponent: 0) // 초기에 최근회차로 띄어줌
     }
 }
 

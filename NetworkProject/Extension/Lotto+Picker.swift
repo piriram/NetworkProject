@@ -22,15 +22,21 @@ extension LottoViewController: UIPickerViewDelegate,UIPickerViewDataSource{
         let fullText = roundText + resultText
         
         let attributedText = NSMutableAttributedString(string: fullText)
-        attributedText.addAttribute(.foregroundColor, value: UIColor.systemYellow, range: NSRange(location: 0, length: roundText.count))
-        attributedText.addAttribute(.foregroundColor, value: UIColor.black, range: NSRange(location: roundText.count, length: resultText.count))
+        attributedText.addAttribute(.foregroundColor,
+                                    value: UIColor.systemYellow,
+                                    range: NSRange(location: 0, length: roundText.count))
+        attributedText.addAttribute(.foregroundColor,
+                                    value: UIColor.black,
+                                    range: NSRange(location: roundText.count,
+                                                   length: resultText.count))
         
         resultLabel.attributedText = attributedText
         
-        let mainNumbers = (1...45).shuffled().prefix(6).sorted()
-        let bonusNumber = (1...45).filter { !mainNumbers.contains($0) }.randomElement() ?? 1
-        
-        updateNumbers(main: Array(mainNumbers), bonus: bonusNumber)
+        requestData(num: round) { lotto in
+            guard let lotto = lotto else { return }
+           
+            self.updateNumbers(lotto:lotto)
+        }
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
