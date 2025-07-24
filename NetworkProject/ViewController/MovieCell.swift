@@ -15,22 +15,23 @@ class MovieCell: UITableViewCell {
         label.textColor = .black
         label.backgroundColor = .white
         label.textAlignment = .center
-        label.font = .boldSystemFont(ofSize: 14)
+        label.font = .boldSystemFont(ofSize: 16)
         return label
     }()
     
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
-        label.font = .boldSystemFont(ofSize: 16)
+        label.font = .boldSystemFont(ofSize: 20)
         label.numberOfLines = 1
+        label.lineBreakMode = .byTruncatingTail
         return label
     }()
     
     private let dateLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
-        label.font = .systemFont(ofSize: 12)
+        label.font = .systemFont(ofSize: 16)
         label.textAlignment = .right
         return label
     }()
@@ -44,6 +45,7 @@ class MovieCell: UITableViewCell {
         
         selectionStyle = .none
         backgroundColor = .clear
+        
         configureLayout()
     }
     
@@ -65,18 +67,21 @@ class MovieCell: UITableViewCell {
         rankLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(12)
             make.centerY.equalToSuperview()
-            make.width.width.equalTo(30)
-            //            make.height.equalTo(20)
+            make.width.width.equalTo(45)
+            make.height.equalTo(30)
         }
         
         titleLabel.snp.makeConstraints { make in
-            make.leading.equalTo(rankLabel.snp.trailing).offset(12)
+            make.leading.equalTo(rankLabel.snp.trailing).offset(20)
             make.centerY.equalToSuperview()
-            make.trailing.lessThanOrEqualTo(dateLabel.snp.leading).offset(-8)
+            make.trailing.equalTo(dateLabel.snp.leading).offset(-8)
         }
         
         dateLabel.snp.makeConstraints { make in
             make.trailing.equalToSuperview().offset(-12)
+//            make.width.lessThanOrEqualTo(20)
+//            make.width.greaterThanOrEqualTo(20)
+            make.width.equalTo(100)
             make.centerY.equalToSuperview()
         }
     }

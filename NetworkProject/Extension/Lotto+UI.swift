@@ -15,7 +15,7 @@ extension LottoViewController {
             label.textAlignment = .center
             label.font = .boldSystemFont(ofSize: 16)
             label.textColor = .white
-            label.backgroundColor = .lightGray
+            label.backgroundColor = .systemGray2
             label.clipsToBounds = true
             label.layer.cornerRadius = 20
             
@@ -28,7 +28,7 @@ extension LottoViewController {
         }
         
         plusLabel.snp.makeConstraints { make in
-            make.width.equalTo(12)
+            make.width.equalTo(40)
         }
         stackView.addArrangedSubview(plusLabel)
         

@@ -35,8 +35,8 @@ extension LottoViewController {
         }
         
         stackView.snp.makeConstraints { make in
-            make.top.equalTo(resultLabel.snp.bottom).offset(24)
-            make.centerX.equalToSuperview()
+            make.top.equalTo(resultLabel.snp.bottom).offset(30)
+            make.centerX.equalTo(view.safeAreaLayoutGuide)
             make.height.equalTo(40)
         }
         

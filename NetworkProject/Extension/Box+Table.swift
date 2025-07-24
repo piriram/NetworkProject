@@ -22,8 +22,10 @@ extension BoxOfficeViewController: UITableViewDataSource, UITableViewDelegate {
         //        cell.contentView.backgroundColor = .black
         return cell
     }
-    
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 80
-//    }
+    func configureTableHeight() {
+        tableView.rowHeight = 60
+//        tableView.estimatedRowHeight = 100
+        tableView.backgroundColor = .black
+    }
+   
 }

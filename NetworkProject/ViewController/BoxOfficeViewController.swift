@@ -52,6 +52,8 @@ class BoxOfficeViewController: UIViewController {
         view.backgroundColor = .black
         configureLayout()
         actions()
+        configureTableHeight()
+        
         tableView.delegate = self
         tableView.dataSource = self
     }

@@ -45,7 +45,7 @@ class LottoViewController: UIViewController {
     let resultLabel: UILabel = {
         let label = UILabel()
         label.text = "당첨결과"
-        label.font = .boldSystemFont(ofSize: 20)
+        label.font = .boldSystemFont(ofSize: 25)
         label.textAlignment = .left
         return label
     }()
