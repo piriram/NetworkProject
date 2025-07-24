@@ -1,5 +1,5 @@
 //
-//  BoxOfficeViewControllerViewController.swift
+//  BoxOfficeViewController.swift
 //  NetworkProject
 //
 //  Created by piri kim on 7/23/25.
@@ -40,7 +40,7 @@ class BoxOfficeViewController: UIViewController {
         tv.register(MovieCell.self, forCellReuseIdentifier: "MovieCell")
         return tv
     }()
-    
+    // 클로저 함수 축약문
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .black
@@ -50,7 +50,7 @@ class BoxOfficeViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
     }
-   
+    
 }
 
 #Preview {

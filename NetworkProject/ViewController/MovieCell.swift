@@ -43,6 +43,7 @@ class MovieCell: UITableViewCell {
         contentView.backgroundColor = .black
         
         selectionStyle = .none
+        backgroundColor = .clear
         configureLayout()
     }
     
@@ -65,7 +66,7 @@ class MovieCell: UITableViewCell {
             make.leading.equalToSuperview().offset(12)
             make.centerY.equalToSuperview()
             make.width.width.equalTo(30)
-//            make.height.equalTo(20)
+            //            make.height.equalTo(20)
         }
         
         titleLabel.snp.makeConstraints { make in
