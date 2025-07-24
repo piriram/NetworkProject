@@ -17,10 +17,10 @@ class BoxOfficeViewController: UIViewController {
         textField.backgroundColor = .clear
         textField.textColor = .white
         
-        let bottomLine = CALayer()
-        bottomLine.frame = CGRect(x: 0, y: 39, width: 300, height: 2)
-        bottomLine.backgroundColor = UIColor.white.cgColor // bound로 리팩토링 한번 해보기
-        textField.layer.addSublayer(bottomLine) // 하위 레이어 추가
+//        let bottomLine = CALayer()
+//        bottomLine.frame = CGRect(x: 0, y: 39, width: 300, height: 2)
+//        bottomLine.backgroundColor = UIColor.white.cgColor // bound로 리팩토링 한번 해보기
+//        textField.layer.addSublayer(bottomLine) // 하위 레이어 추가
         return textField
     }()
     
@@ -41,7 +41,11 @@ class BoxOfficeViewController: UIViewController {
         tv.register(MovieCell.self, forCellReuseIdentifier: "MovieCell")
         return tv
     }()
-    
+    let line: UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        return view
+    }()
     // 클로저 함수 축약문
     override func viewDidLoad() {
         super.viewDidLoad()

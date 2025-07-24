@@ -12,17 +12,17 @@ extension LottoViewController {
         tf.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide).offset(20)
             make.horizontalEdges.equalToSuperview().inset(20)
-            make.height.equalTo(40)
+            make.height.equalTo(56)
         }
         
         infoLabel.snp.makeConstraints { make in
-            make.top.equalTo(tf.snp.bottom).offset(20)
+            make.top.equalTo(tf.snp.bottom).offset(30)
             make.leading.equalToSuperview().offset(20)
         }
         
         dateLabel.snp.makeConstraints { make in
             make.centerY.equalTo(infoLabel)
-            make.trailing.equalToSuperview().offset(-20)
+            make.trailing.equalTo(tf.snp.trailing)
         }
         line.snp.makeConstraints { make in
             make.horizontalEdges.equalToSuperview()
@@ -30,7 +30,7 @@ extension LottoViewController {
             make.top.equalTo(dateLabel.snp.bottom).offset(20)
         }
         resultLabel.snp.makeConstraints { make in
-            make.top.equalTo(line.snp.bottom).offset(20)
+            make.top.equalTo(line.snp.bottom).offset(30)
             make.centerX.equalToSuperview()
         }
         
