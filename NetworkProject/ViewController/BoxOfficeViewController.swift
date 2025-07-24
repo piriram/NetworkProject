@@ -9,6 +9,7 @@ import SnapKit
 
 class BoxOfficeViewController: UIViewController {
     var movies = MovieInfo.movies.shuffled().prefix(10)
+    
     internal let searchTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "20200401"
@@ -40,17 +41,16 @@ class BoxOfficeViewController: UIViewController {
         tv.register(MovieCell.self, forCellReuseIdentifier: "MovieCell")
         return tv
     }()
+    
     // 클로저 함수 축약문
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .black
-        
         configureLayout()
         actions()
         tableView.delegate = self
         tableView.dataSource = self
     }
-    
 }
 
 #Preview {

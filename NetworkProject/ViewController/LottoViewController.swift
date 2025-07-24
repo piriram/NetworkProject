@@ -94,10 +94,9 @@ class LottoViewController: UIViewController {
         return view
     }()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        
         configureUI()
         configureLayout()
         configureBall()
