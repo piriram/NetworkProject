@@ -34,7 +34,7 @@ extension LottoViewController: UIPickerViewDelegate,UIPickerViewDataSource{
         
         requestData(num: round) { lotto in
             guard let lotto = lotto else { return }
-           
+            
             self.updateNumbers(lotto:lotto)
         }
     }

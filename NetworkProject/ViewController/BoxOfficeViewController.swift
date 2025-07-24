@@ -8,22 +8,25 @@ import UIKit
 import SnapKit
 
 class BoxOfficeViewController: UIViewController {
-    var movies = MovieInfo.movies.shuffled().prefix(10)
+    var movies:[DailyBoxOffice] = []
     
     internal let searchTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "20200401"
         textField.borderStyle = .none
         textField.backgroundColor = .clear
         textField.textColor = .white
+        textField.textAlignment = .center
+        textField.font = .systemFont(ofSize: 20)
         
-//        let bottomLine = CALayer()
-//        bottomLine.frame = CGRect(x: 0, y: 39, width: 300, height: 2)
-//        bottomLine.backgroundColor = UIColor.white.cgColor // bound로 리팩토링 한번 해보기
-//        textField.layer.addSublayer(bottomLine) // 하위 레이어 추가
+        let placeholderText = "ex.20200401"
+        textField.attributedPlaceholder = NSAttributedString(
+            string: placeholderText,
+            attributes: [.foregroundColor: UIColor.gray]
+        )
+
         return textField
     }()
-    
+
     internal let searchButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("검색", for: .normal)
@@ -38,7 +41,7 @@ class BoxOfficeViewController: UIViewController {
         tv.tableFooterView = UIView()
         tv.backgroundColor = .black
         tv.separatorColor = .black
-        tv.register(MovieCell.self, forCellReuseIdentifier: "MovieCell")
+        tv.register(MovieTableViewCell.self, forCellReuseIdentifier: "MovieCell")
         return tv
     }()
     let line: UIView = {

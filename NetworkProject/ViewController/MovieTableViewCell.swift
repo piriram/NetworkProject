@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class MovieCell: UITableViewCell {
+class MovieTableViewCell: UITableViewCell {
     
     private let rankLabel: UILabel = {
         let label = UILabel()
@@ -53,10 +53,10 @@ class MovieCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(rank: Int, title: String, date: String) {
-        rankLabel.text = "\(rank)"
-        titleLabel.text = title
-        dateLabel.text = formatDate(from: date)
+    func configure(movie:DailyBoxOffice) {
+        rankLabel.text = "\(movie.rank)"
+        titleLabel.text = movie.movieNm
+        dateLabel.text = movie.openDt
     }
     
     private func configureLayout() {
